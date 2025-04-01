@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Countdown Timer
     const countdownTimer = document.getElementById('countdown');
     if (countdownTimer) {
-        const eventDate = new Date('April 1, 2025 00:00:00').getTime();
+        const eventDate = new Date('April 7, 2025 17:00:00 GMT+0900').getTime();
         
         const updateCountdown = () => {
             const now = new Date().getTime();
