@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOOM x Chess Tournament 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <header>
+        <div class="logo">
+            <h1>DOOM<span class="x-mark">X</span>CHESS</h1>
+            <p class="event-date">April 1st, 2025</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#rules" class="nav-link">Rules</a></li>
+                <li><a href="#prizes" class="nav-link">Prizes</a></li>
+                <li><a href="#brackets" class="nav-link">Brackets</a></li>
+                <li><a href="#results" class="nav-link">Results</a></li>
+                <li><a href="#register" class="nav-link cta">Register Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>LABORATORY <span class="highlight">GAMING EVENT</span></h2>
+                <h3>Where demons play chess and marines make the right moves</h3>
+                <p>Join the ultimate hybrid tournament combining strategic thinking and fast-paced action</p>
+                <div class="countdown-timer">
+                    <div id="countdown">
+                        <div class="time-block">
+                            <span id="days">00</span>
+                            <span class="time-label">Days</span>
+                        </div>
+                        <div class="time-block">
+                            <span id="hours">00</span>
+                            <span class="time-label">Hours</span>
+                        </div>
+                        <div class="time-block">
+                            <span id="minutes">00</span>
+                            <span class="time-label">Minutes</span>
+                        </div>
+                        <div class="time-block">
+                            <span id="seconds">00</span>
+                            <span class="time-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="#register" class="btn primary-btn">Register Now</a>
+                <a href="#rules" class="btn secondary-btn">Learn More</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/event-poster.jpg" alt="DOOM x Chess Tournament Poster">
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About the Event</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>The DOOM x Chess Tournament is a unique laboratory gaming event combining two iconic games: id Software's legendary first-person shooter DOOM and the timeless strategy game of chess.</p>
+                        <p>This exclusive event for laboratory members challenges participants to demonstrate both strategic thinking and quick reflexes as they compete in both games to determine the ultimate champion.</p>
+                        <p>Organized by our research lab, this tournament aims to foster camaraderie among lab members, provide a fun break from research activities, and crown the most versatile gamer in our community.</p>
+                    </div>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h3>When</h3>
+                            <p>April 1st, 2025</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Where</h3>
+                            <p>Research Lab Conference Room</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <h3>Who</h3>
+                            <p>All Lab Members Welcome</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-trophy"></i>
+                            <h3>Prize Pool</h3>
+                            <p>$1,000+ in Prizes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rules" class="section dark-section">
+            <div class="container">
+                <h2 class="section-title">Tournament Rules</h2>
+                
+                <div class="games-container">
+                    <div class="game-rules doom">
+                        <div class="game-header">
+                            <img src="images/doom-logo.png" alt="DOOM Logo" class="game-logo">
+                            <h3>DOOM Tournament</h3>
+                        </div>
+                        <div class="rule-content">
+                            <ul class="rule-list">
+                                <li><span class="rule-icon"><i class="fas fa-gamepad"></i></span> Game Version: DOOM (1993) Ultimate DOOM</li>
+                                <li><span class="rule-icon"><i class="fas fa-flag-checkered"></i></span> Format: 1v1 Deathmatch</li>
+                                <li><span class="rule-icon"><i class="fas fa-stopwatch"></i></span> Match Duration: 10 minutes</li>
+                                <li><span class="rule-icon"><i class="fas fa-skull"></i></span> Victory: Highest frag count wins</li>
+                                <li><span class="rule-icon"><i class="fas fa-map"></i></span> Maps: E1M1, E1M7, and E2M2</li>
+                                <li><span class="rule-icon"><i class="fas fa-cog"></i></span> Settings: All weapons, no monsters</li>
+                                <li><span class="rule-icon"><i class="fas fa-exclamation-triangle"></i></span> Tiebreaker: Sudden death - first kill wins</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="game-rules chess">
+                        <div class="game-header">
+                            <img src="images/chess-logo.png" alt="Chess Logo" class="game-logo">
+                            <h3>Chess Tournament</h3>
+                        </div>
+                        <div class="rule-content">
+                            <ul class="rule-list">
+                                <li><span class="rule-icon"><i class="fas fa-chess"></i></span> Format: Standard chess rules</li>
+                                <li><span class="rule-icon"><i class="fas fa-hourglass-half"></i></span> Time Control: 10 minutes per player</li>
+                                <li><span class="rule-icon"><i class="fas fa-plus-circle"></i></span> Increment: 5 seconds per move</li>
+                                <li><span class="rule-icon"><i class="fas fa-trophy"></i></span> Victory: Checkmate, timeout, or resignation</li>
+                                <li><span class="rule-icon"><i class="fas fa-balance-scale"></i></span> Draw Conditions: Standard FIDE rules</li>
+                                <li><span class="rule-icon"><i class="fas fa-random"></i></span> Side Selection: Random for first match</li>
+                                <li><span class="rule-icon"><i class="fas fa-exchange-alt"></i></span> Format: Best of 3 games</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tournament-format">
+                    <h3>Tournament Format</h3>
+                    <p>The tournament follows a combined scoring system across both games:</p>
+                    <ul>
+                        <li>Players compete in both DOOM and chess matches against the same opponent</li>
+                        <li>Winning a DOOM match earns 1 point; winning a chess match earns 1 point</li>
+                        <li>The player with the higher total score advances to the next round</li>
+                        <li>In case of a tie (1-1), a blitz chess match (3 min + 2 sec increment) will serve as the tiebreaker</li>
+                        <li>The tournament follows a single-elimination bracket format</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="prizes" class="section">
+            <div class="container">
+                <h2 class="section-title">Prizes & Rewards</h2>
+                <div class="prizes-container">
+                    <div class="prize-card first">
+                        <div class="prize-medal">
+                            <i class="fas fa-trophy"></i>
+                            <span class="place">1st</span>
+                        </div>
+                        <div class="prize-details">
+                            <h3>Champion</h3>
+                            <p class="prize-value">$500</p>
+                            <p class="prize-extras">+ Custom Trophy + Gaming Peripheral</p>
+                        </div>
+                    </div>
+                    <div class="prize-card second">
+                        <div class="prize-medal">
+                            <i class="fas fa-medal"></i>
+                            <span class="place">2nd</span>
+                        </div>
+                        <div class="prize-details">
+                            <h3>Runner-up</h3>
+                            <p class="prize-value">$250</p>
+                            <p class="prize-extras">+ Lab Recognition Certificate</p>
+                        </div>
+                    </div>
+                    <div class="prize-card third">
+                        <div class="prize-medal">
+                            <i class="fas fa-award"></i>
+                            <span class="place">3rd</span>
+                        </div>
+                        <div class="prize-details">
+                            <h3>Third Place</h3>
+                            <p class="prize-value">$100</p>
+                            <p class="prize-extras">+ Lab Recognition Certificate</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="special-prizes">
+                    <h3>Special Awards</h3>
+                    <div class="special-prizes-grid">
+                        <div class="special-prize">
+                            <i class="fas fa-crosshairs"></i>
+                            <h4>DOOM Master</h4>
+                            <p>Best DOOM player: $75</p>
+                        </div>
+                        <div class="special-prize">
+                            <i class="fas fa-chess-knight"></i>
+                            <h4>Chess Grandmaster</h4>
+                            <p>Best chess player: $75</p>
+                        </div>
+                        <div class="special-prize">
+                            <i class="fas fa-bolt"></i>
+                            <h4>Speedrunner</h4>
+                            <p>Fastest DOOM completion: $50</p>
+                        </div>
+                        <div class="special-prize">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Tactical Genius</h4>
+                            <p>Most creative chess play: $50</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="brackets" class="section dark-section">
+            <div class="container">
+                <h2 class="section-title">Tournament Brackets</h2>
+                <div class="bracket-container">
+                    <div class="bracket-controls">
+                        <button id="doom-bracket-btn" class="bracket-btn active">DOOM Bracket</button>
+                        <button id="chess-bracket-btn" class="bracket-btn">Chess Bracket</button>
+                        <button id="combined-bracket-btn" class="bracket-btn">Combined Results</button>
+                    </div>
+                    
+                    <div id="brackets-display">
+                        <!-- Brackets will be dynamically rendered here via JavaScript -->
+                        <div class="placeholder-bracket">
+                            <p>Tournament brackets will be displayed here after registration closes.</p>
+                            <div class="sample-bracket">
+                                <div class="round">
+                                    <div class="match">
+                                        <div class="team">Player 1</div>
+                                        <div class="team">Player 2</div>
+                                    </div>
+                                    <div class="match">
+                                        <div class="team">Player 3</div>
+                                        <div class="team">Player 4</div>
+                                    </div>
+                                    <div class="match">
+                                        <div class="team">Player 5</div>
+                                        <div class="team">Player 6</div>
+                                    </div>
+                                    <div class="match">
+                                        <div class="team">Player 7</div>
+                                        <div class="team">Player 8</div>
+                                    </div>
+                                </div>
+                                <div class="round">
+                                    <div class="match">
+                                        <div class="team">TBD</div>
+                                        <div class="team">TBD</div>
+                                    </div>
+                                    <div class="match">
+                                        <div class="team">TBD</div>
+                                        <div class="team">TBD</div>
+                                    </div>
+                                </div>
+                                <div class="round">
+                                    <div class="match final">
+                                        <div class="team">TBD</div>
+                                        <div class="team">TBD</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="section">
+            <div class="container">
+                <h2 class="section-title">Tournament Results</h2>
+                <div class="results-container">
+                    <div class="results-tabs">
+                        <button class="tab-btn active" data-tab="all-results">All Matches</button>
+                        <button class="tab-btn" data-tab="doom-results">DOOM Results</button>
+                        <button class="tab-btn" data-tab="chess-results">Chess Results</button>
+                    </div>
+                    
+                    <div class="results-content">
+                        <div id="all-results" class="tab-content active">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Match</th>
+                                        <th>Player 1</th>
+                                        <th>Player 2</th>
+                                        <th>DOOM Result</th>
+                                        <th>Chess Result</th>
+                                        <th>Winner</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Results will be populated dynamically -->
+                                    <tr>
+                                        <td colspan="6" class="no-results">Results will be posted as matches are completed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div id="doom-results" class="tab-content">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Match</th>
+                                        <th>Player 1</th>
+                                        <th>Player 2</th>
+                                        <th>Score</th>
+                                        <th>Map</th>
+                                        <th>Winner</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- DOOM Results will be populated dynamically -->
+                                    <tr>
+                                        <td colspan="6" class="no-results">DOOM results will be posted as matches are completed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div id="chess-results" class="tab-content">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Match</th>
+                                        <th>White</th>
+                                        <th>Black</th>
+                                        <th>Result</th>
+                                        <th>Moves</th>
+                                        <th>Winner</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Chess Results will be populated dynamically -->
+                                    <tr>
+                                        <td colspan="6" class="no-results">Chess results will be posted as matches are completed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="register" class="section cta-section">
+            <div class="container">
+                <h2 class="section-title">Register for the Tournament</h2>
+                <div class="registration-form-container">
+                    <form id="registration-form" class="registration-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="lab-id">Lab ID</label>
+                                <input type="text" id="lab-id" name="lab-id" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="department">Department</label>
+                                <input type="text" id="department" name="department" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="doom-experience">DOOM Experience Level</label>
+                                <select id="doom-experience" name="doom-experience" required>
+                                    <option value="">Select Experience Level</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                    <option value="expert">Expert</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="chess-experience">Chess Experience Level</label>
+                                <select id="chess-experience" name="chess-experience" required>
+                                    <option value="">Select Experience Level</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                    <option value="expert">Expert</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="comments">Additional Comments</label>
+                            <textarea id="comments" name="comments" rows="3"></textarea>
+                        </div>
+                        <div class="form-group form-checkbox">
+                            <input type="checkbox" id="rules-agreement" name="rules-agreement" required>
+                            <label for="rules-agreement">I agree to the tournament rules and fair play policy</label>
+                        </div>
+                        <button type="submit" class="btn primary-btn submit-btn">Register Now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>DOOM<span class="x-mark">X</span>CHESS</h2>
+                <p>Laboratory Gaming Event 2025</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#rules">Rules</a></li>
+                    <li><a href="#prizes">Prizes</a></li>
+                    <li><a href="#brackets">Brackets</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#register">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> tournament@lab.edu</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Research Lab Building, Room 42</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Laboratory Gaming Event. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
