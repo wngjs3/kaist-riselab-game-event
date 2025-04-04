@@ -4,7 +4,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Chess Dataset Collection Documentation</title>
+	<title>Chess Tournament Preparation Guide</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 	<style>
 		/* Base styles */
 		:root {
@@ -14,6 +18,15 @@
 			--border-color: #e0e0e0;
 			--section-bg: #f9f9f9;
 			--link-color: #2c5282;
+			--chess-blue: #3498db;
+			--chess-green: #2ecc71;
+			--chess-purple: #9b59b6;
+			--chess-dark: #1a1a1a;
+			--chess-light: #ecf0f1;
+			--heading-font: 'Orbitron', sans-serif;
+			--body-font: 'Roboto', sans-serif;
+			--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+			--radius-md: 0.5rem;
 		}
 		
 		* {
@@ -23,101 +36,192 @@
 		}
 		
 		body {
-			font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+			font-family: var(--body-font);
+			background-color: var(--chess-dark);
+			color: var(--chess-light);
 			line-height: 1.6;
-			color: var(--text-color);
-			background-color: var(--bg-color);
 			padding: 0;
-			max-width: 100%;
+			margin: 0;
+		}
+		
+		.noise-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url('../images/noise.png');
+			opacity: 0.03;
+			pointer-events: none;
+			z-index: 9999;
+		}
+		
+		header {
+			background-color: rgba(0, 0, 0, 0.8);
+			padding: 1.5rem 0;
+			position: sticky;
+			top: 0;
+			z-index: 100;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 		}
 		
 		.container {
-			width: 90%;
-			max-width: 1000px;
+			max-width: 1200px;
 			margin: 0 auto;
-			padding: 2rem 0;
+			padding: 0 2rem;
 		}
 		
-		/* Typography */
-		h1, h2, h3, h4 {
-			margin-top: 1.5rem;
-			margin-bottom: 1rem;
-			color: #333;
-			font-weight: 600;
-			line-height: 1.3;
+		.header-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 		}
 		
-		h1 {
-			font-size: 2.5rem;
-			text-align: center;
-			padding-bottom: 1rem;
-			border-bottom: 1px solid var(--border-color);
-			margin-bottom: 2rem;
+		.logo {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
 		}
 		
-		h2 {
-			font-size: 1.8rem;
-			margin-top: 2.5rem;
-			padding-bottom: 0.5rem;
-			border-bottom: 1px solid var(--border-color);
+		.logo img {
+			height: 60px;
 		}
 		
-		h3 {
-			font-size: 1.4rem;
-			margin-top: 2rem;
+		.logo h1 {
+			font-family: var(--heading-font);
+			color: var(--chess-blue);
+			font-size: 2rem;
+			text-transform: uppercase;
 		}
 		
-		p {
-			margin-bottom: 1.2rem;
-		}
-		
-		a {
-			color: var(--link-color);
+		.back-btn {
+			display: inline-block;
+			background-color: var(--chess-blue);
+			color: white;
+			padding: 0.75rem 1.5rem;
+			border-radius: 0.25rem;
 			text-decoration: none;
+			font-family: var(--heading-font);
+			font-weight: 600;
+			text-transform: uppercase;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
 		}
 		
-		a:hover {
-			text-decoration: underline;
+		.back-btn:hover {
+			background-color: #2980b9;
+			transform: translateY(-2px);
+			box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
 		}
 		
-		/* Lists */
-		ul, ol {
-			margin: 1rem 0 1.5rem 2rem;
+		main {
+			padding: 3rem 0;
 		}
 		
-		li {
-			margin-bottom: 0.5rem;
-		}
-		
-		/* Images */
-		figure {
-			margin: 1.5rem 0;
+		.page-title {
+			font-family: var(--heading-font);
 			text-align: center;
+			margin-bottom: 2rem;
+			font-size: 2.5rem;
+			color: var(--chess-blue);
+			text-transform: uppercase;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 		}
 		
-		img {
-			max-width: 100%;
-			height: auto;
-			border-radius: 4px;
-			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-		}
-		
-		/* Sections */
 		.section {
-			margin-bottom: 2.5rem;
-			padding: 1.5rem;
-			background-color: var(--section-bg);
-			border-radius: 8px;
-			box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+			margin-bottom: 4rem;
+			background-color: rgba(0, 0, 0, 0.3);
+			border-radius: var(--radius-md);
+			padding: 2rem;
+			box-shadow: var(--shadow-lg);
+			border-left: 4px solid var(--chess-blue);
 		}
 		
-		/* Responsive iframe */
+		.section-title {
+			font-family: var(--heading-font);
+			color: var(--chess-green);
+			margin-bottom: 1.5rem;
+			font-size: 1.75rem;
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+		}
+		
+		.section-title i {
+			color: var(--chess-blue);
+		}
+		
+		.step-card {
+			background-color: rgba(255, 255, 255, 0.05);
+			border-radius: var(--radius-md);
+			padding: 1.5rem;
+			margin-bottom: 1.5rem;
+			border-left: 3px solid var(--chess-blue);
+		}
+		
+		.step-header {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			margin-bottom: 1rem;
+		}
+		
+		.step-number {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 40px;
+			height: 40px;
+			background-color: var(--chess-blue);
+			color: white;
+			font-family: var(--heading-font);
+			font-weight: 700;
+			border-radius: 50%;
+			flex-shrink: 0;
+		}
+		
+		.step-title {
+			font-family: var(--heading-font);
+			font-size: 1.25rem;
+			color: var(--chess-green);
+			margin: 0;
+		}
+		
+		.step-content {
+			margin-left: 3.5rem;
+		}
+		
+		.step-content p {
+			margin-bottom: 1rem;
+		}
+		
+		.step-content img {
+			max-width: 100%;
+			border-radius: 0.25rem;
+			margin: 1rem 0;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+		}
+		
+		.note-box {
+			background-color: rgba(52, 152, 219, 0.1);
+			border-left: 4px solid var(--chess-blue);
+			padding: 1rem;
+			border-radius: 0.25rem;
+			margin: 1.5rem 0;
+		}
+		
+		.note-box p {
+			margin-bottom: 0;
+		}
+		
 		.video-container {
 			position: relative;
 			overflow: hidden;
 			width: 100%;
 			margin: 1.5rem 0;
 			padding-top: 56.25%; /* 16:9 Aspect Ratio */
+			border-radius: 0.5rem;
+			box-shadow: var(--shadow-lg);
 		}
 		
 		.video-container iframe {
@@ -129,46 +233,111 @@
 			width: 100%;
 			height: 100%;
 			border: none;
-			border-radius: 8px;
 		}
 		
-		/* Call to action */
-		.cta {
-			background-color: #edf2fb;
-			padding: 1.5rem;
-			margin: 2rem 0;
-			border-left: 4px solid var(--primary-color);
-			border-radius: 4px;
-		}
-		
-		/* Emphasis */
-		strong {
-			color: #000;
+		.btn {
+			display: inline-block;
+			background-color: var(--chess-blue);
+			color: white;
+			padding: 0.75rem 1.5rem;
+			border-radius: 0.25rem;
+			text-decoration: none;
+			font-family: var(--heading-font);
 			font-weight: 600;
+			text-transform: uppercase;
+			transition: all 0.3s ease;
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
 		}
 		
-		/* Footer */
-		footer {
-			margin-top: 4rem;
-			padding-top: 1.5rem;
+		.btn:hover {
+			background-color: #2980b9;
+			transform: translateY(-2px);
+			box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+		}
+		
+		.btn-secondary {
+			background-color: transparent;
+			border: 2px solid var(--chess-light);
+			color: var(--chess-light);
+		}
+		
+		.btn-secondary:hover {
+			background-color: rgba(255, 255, 255, 0.1);
+			color: var(--chess-light);
+		}
+		
+		.footer {
+			background-color: rgba(0, 0, 0, 0.8);
+			padding: 2rem 0;
 			text-align: center;
-			border-top: 1px solid var(--border-color);
+			margin-top: 3rem;
+		}
+		
+		.footer-content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+		}
+		
+		.footer-text {
 			font-size: 0.9rem;
-			color: #666;
+			color: rgba(255, 255, 255, 0.7);
+		}
+		
+		.footer-link {
+			color: var(--chess-blue);
+			text-decoration: none;
+			transition: color 0.3s ease;
+		}
+		
+		.footer-link:hover {
+			color: var(--chess-green);
+		}
+		
+		@media (max-width: 768px) {
+			.header-content {
+				flex-direction: column;
+				gap: 1rem;
+				text-align: center;
+			}
+			
+			.section-title {
+				font-size: 1.5rem;
+			}
+			
+			.step-content {
+				margin-left: 0;
+			}
 		}
 	</style>
 </head>
 
 <body>
-	<div class="container">
-		<header>
-			<h1>Chess Dataset Collection</h1>
-		</header>
-		
-		<main>
-			<section class="section" id="how-to-play">
-				<h2>How to play Chess?</h2>
-				<p><strong>[Tutorial Video]</strong></p>
+	<div class="noise-overlay"></div>
+	
+	<header>
+		<div class="container">
+			<div class="header-content">
+				<div class="logo">
+					<img src="../images/chess-logo.png" alt="Chess Logo">
+					<h1>Chess Preparation Guide</h1>
+				</div>
+				<a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Main Page</a>
+			</div>
+		</div>
+	</header>
+	
+	<main>
+		<div class="container">
+			<h1 class="page-title">Chess Tournament Preparation Guide</h1>
+			
+			<section class="section">
+				<h2 class="section-title"><i class="fas fa-chess"></i> How to play Chess?</h2>
+				<p>If you're new to chess or need a refresher, here's a complete tutorial video to get you started:</p>
+				
 				<div class="video-container">
 					<iframe src="https://www.youtube.com/embed/IU6k-4rKf-g" 
 						title="How to Play Chess: The Complete Guide for Beginners" 
@@ -176,105 +345,127 @@
 						allowfullscreen></iframe>
 				</div>
 				
-				<p><strong>[Tutorial Blog]</strong></p>
-				<p><a href="https://www.chess.com/learn-how-to-play-chess" target="_blank">https://www.chess.com/learn-how-to-play-chess</a></p>
+				<p>For additional learning resources, you can also check out this comprehensive tutorial:</p>
+				<a href="https://www.chess.com/learn-how-to-play-chess" target="_blank" class="btn">Chess.com Tutorial</a>
 			</section>
 			
-			<section class="section" id="why">
-				<h2>Why are we doing this?</h2>
-				<p>We are trying to create a benchmark for detecting cheater in chess.</p>
+			<section class="section">
+				<h2 class="section-title"><i class="fas fa-question-circle"></i> Why are we doing this?</h2>
+				<p>We are working to create a benchmark for detecting cheaters in chess. This is an important problem in the chess community.</p>
 				
-				<figure>
-					<img src="images/image.png" alt="Chess Screenshot">
-				</figure>
+				<div class="step-card">
+					<div class="step-content">
+						<img src="images/image.png" alt="Chess Screenshot">
+						
+						<p>Cheaters pose a serious problem in the chess community, and detecting them is challenging because cheaters often mix computer-recommended moves with their own moves to avoid detection.</p>
+					</div>
+				</div>
 				
-				<p>Cheaters are a serious problem in the chess community and detecting them is difficult because cheaters will mix cheat moves with their own moves.</p>
-				
-				<div class="cta">
-					<p>→ We are creating data of normal players and cheaters (with limited attempts to cheat) and use these data to improve cheat detection in chess</p>
+				<div class="note-box">
+					<p><strong>Important:</strong> We are creating a dataset that includes both normal players and players with limited cheating attempts. This data will be used to improve cheat detection algorithms in chess.</p>
 				</div>
 			</section>
 			
-			<section class="section" id="how-to-use">
-				<h2>How to use?</h2>
+			<section class="section">
+				<h2 class="section-title"><i class="fas fa-chess-board"></i> How to Participate</h2>
 				
-				<h3>Access Website Here</h3>
-				<p><a href="http://34.64.183.234/" target="_blank">http://34.64.183.234</a></p>
+				<div class="step-card">
+					<div class="step-header">
+						<div class="step-number">1</div>
+						<h3 class="step-title">Access the Chess Platform</h3>
+					</div>
+					<div class="step-content">
+						<p>Visit our chess platform at the following URL:</p>
+						<a href="http://34.64.183.234/" target="_blank" class="btn">Chess Platform</a>
+					</div>
+				</div>
 				
-				<h3>Participate in Normal Chess or Blitz Chess</h3>
-				<ul>
-					<li><strong>Normal Chess Game</strong>: Take as much time to make a move</li>
-					<li><strong>Blitz Chess Game</strong>: Total of 5 minutes to make a move during entire game.
+				<div class="step-card">
+					<div class="step-header">
+						<div class="step-number">2</div>
+						<h3 class="step-title">Choose Your Game Mode</h3>
+					</div>
+					<div class="step-content">
+						<p>You can participate in two different game modes:</p>
+						
 						<ul>
-							<li>A player loses they used up all 5 minutes before game is over!</li>
+							<li><strong>Normal Chess Game:</strong> Take as much time as you need to make each move</li>
+							<li><strong>Blitz Chess Game:</strong> Limited to 5 minutes total for all your moves. You lose if you use up all your time!</li>
 						</ul>
-					</li>
-				</ul>
+						
+						<img src="images/image1.png" alt="Chess game type selection">
+					</div>
+				</div>
 				
-				<figure>
-					<img src="images/image1.png" alt="Chess game type selection">
-				</figure>
+				<div class="step-card">
+					<div class="step-header">
+						<div class="step-number">3</div>
+						<h3 class="step-title">Start or Join a Game</h3>
+					</div>
+					<div class="step-content">
+						<p>You can either create a new game or join an existing one:</p>
+						
+						<h4>Option A: Create a new game and wait for opponents</h4>
+						<p>You'll wait briefly until an opponent is found</p>
+						<img src="images/image2.png" alt="Waiting for opponent">
+						
+						<p>When a match is found, your game will start immediately</p>
+						<img src="images/image3.png" alt="Game found">
+						
+						<h4>Option B: Join an existing game</h4>
+						<p>Browse the list of available games and select one based on game mode and side preference</p>
+						<img src="images/image4.png" alt="Join existing game">
+					</div>
+				</div>
 				
-				<h3>1.1. Create a new game and wait for others to join</h3>
-				<p>You will wait briefly until opponent is found</p>
+				<div class="step-card">
+					<div class="step-header">
+						<div class="step-number">4</div>
+						<h3 class="step-title">Playing the Game</h3>
+					</div>
+					<div class="step-content">
+						<p>During the tournament, you may be randomly assigned one of two roles:</p>
+						
+						<h4>If you're assigned as a cheater:</h4>
+						<img src="images/image5.png" alt="Cheater view">
+						
+						<p>You'll have <strong>only 5 chances</strong> to use cheat moves, so use them wisely. When you press "Use Cheat," an AI will automatically make the best move for you. These cheat moves are generated by a chess engine that plays better than any human.</p>
+						
+						<h4>If you're playing as a normal player:</h4>
+						<p>Simply play as you normally would. Your opponent won't know whether you're a cheater or not.</p>
+						<img src="images/image6.png" alt="Normal player view">
+						
+						<p>The game will progress normally with players taking turns:</p>
+						<img src="images/image7.png" alt="Game in progress">
+					</div>
+				</div>
 				
-				<figure>
-					<img src="images/image2.png" alt="Waiting for opponent">
-				</figure>
-				
-				<p>When the game is found you will play right away</p>
-				
-				<figure>
-					<img src="images/image3.png" alt="Game found">
-				</figure>
-				
-				<h3>1.2. Join a game created by someone else</h3>
-				<p>You will see the list of games you can join</p>
-				<p>Select games you want to join by the game mode and side</p>
-				
-				<figure>
-					<img src="images/image4.png" alt="Join existing game">
-				</figure>
-				
-				<h3>2. Play the game</h3>
-				<p>If you are assigned as the cheater</p>
-				
-				<figure>
-					<img src="images/image5.png" alt="Cheater view">
-				</figure>
-				
-				<p>You will have <strong>only 5 chances</strong> to use cheat moves, so use WISELY</p>
-				<p>Press "Use Cheat", and an AI will automatically make the best move for you</p>
-				<p>(cheat moves are generated by chess engine better than any human)</p>
-				
-				<p>If you are not assigned as the cheater</p>
-				<p>Play as you normally would</p>
-				
-				<figure>
-					<img src="images/image6.png" alt="Normal player view">
-				</figure>
-				
-				<p>Opponent does not know if your the cheater or not</p>
-				
-				<figure>
-					<img src="images/image7.png" alt="Game in progress">
-				</figure>
-				
-				<div class="cta">
-					<p><strong>For the purpose of data collection, please try not to forfeit</strong></p>
+				<div class="note-box">
+					<p><strong>Important:</strong> For the purpose of data collection, please try to complete your games rather than forfeiting. Each completed game provides valuable data for our research.</p>
 				</div>
 			</section>
 			
-			<section class="section" id="conclusion">
-				<h2>3. If game is over, you can create or join new game</h2>
-				<p>Since we are creating a dataset, active participation in games will be helpful to us!</p>
+			<section class="section">
+				<h2 class="section-title"><i class="fas fa-redo"></i> Continuous Participation</h2>
+				
+				<p>After a game is complete, you're welcome to create or join new games. Your active participation is extremely valuable for our dataset collection!</p>
+				
+				<div class="note-box">
+					<p><strong>Thank you:</strong> Your participation helps advance our research in chess cheat detection, which benefits the entire chess community.</p>
+				</div>
 			</section>
-		</main>
-		
-		<footer>
-			<p>Chess Cheat Detection Research Project Documentation</p>
-		</footer>
-	</div>
+		</div>
+	</main>
+	
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<p class="footer-text">DOOM x Chess Tournament 2025 | Contact: <a href="mailto:juheon@kaist.ac.kr" class="footer-link">juheon@kaist.ac.kr</a></p>
+				<p class="footer-text">Chess Cheat Detection Research Project</p>
+				<a href="../index.html" class="btn btn-secondary">Return to Main Page</a>
+			</div>
+		</div>
+	</footer>
 </body>
 
 </html>

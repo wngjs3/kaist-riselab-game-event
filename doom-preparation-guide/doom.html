@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOOM Tournament Preparation Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --doom-red: #e74c3c;
+            --doom-orange: #f39c12;
+            --doom-yellow: #f1c40f;
+            --doom-blue: #3498db;
+            --doom-dark: #1a1a1a;
+            --doom-light: #ecf0f1;
+            --heading-font: 'Orbitron', sans-serif;
+            --body-font: 'Roboto', sans-serif;
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius-md: 0.5rem;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: var(--body-font);
+            background-color: var(--doom-dark);
+            color: var(--doom-light);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../images/noise.png');
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo img {
+            height: 60px;
+        }
+        
+        .logo h1 {
+            font-family: var(--heading-font);
+            color: var(--doom-red);
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background-color: var(--doom-red);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-family: var(--heading-font);
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        main {
+            padding: 3rem 0;
+        }
+        
+        .page-title {
+            font-family: var(--heading-font);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: var(--doom-red);
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            border-left: 4px solid var(--doom-red);
+        }
+        
+        .section-title {
+            font-family: var(--heading-font);
+            color: var(--doom-yellow);
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .section-title i {
+            color: var(--doom-red);
+        }
+        
+        .step-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--doom-blue);
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--doom-blue);
+            color: white;
+            font-family: var(--heading-font);
+            font-weight: 700;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        .step-title {
+            font-family: var(--heading-font);
+            font-size: 1.25rem;
+            color: var(--doom-yellow);
+            margin: 0;
+        }
+        
+        .step-content {
+            margin-left: 3.5rem;
+        }
+        
+        .step-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .step-content img {
+            max-width: 100%;
+            border-radius: 0.25rem;
+            margin: 1rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .step-content code {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            white-space: nowrap;
+        }
+        
+        .command-block {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 0.25rem;
+            margin: 1rem 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            border-left: 3px solid var(--doom-orange);
+        }
+        
+        .note-box {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--doom-red);
+            padding: 1rem;
+            border-radius: 0.25rem;
+            margin: 1.5rem 0;
+        }
+        
+        .note-box p {
+            margin-bottom: 0;
+        }
+        
+        .controls-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 2rem;
+        }
+        
+        .controls-table th, .controls-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .controls-table th {
+            background-color: rgba(231, 76, 60, 0.1);
+            color: var(--doom-yellow);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .controls-table tr:hover td {
+            background-color: rgba(231, 76, 60, 0.05);
+        }
+        
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .screenshot {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease;
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.02);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            display: block;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .screenshot-caption {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 0.75rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--doom-red);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-family: var(--heading-font);
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--doom-light);
+            color: var(--doom-light);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--doom-light);
+        }
+        
+        .footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-link {
+            color: var(--doom-red);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: var(--doom-yellow);
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .step-content {
+                margin-left: 0;
+            }
+            
+            .screenshots {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../images/doom-logo.png" alt="DOOM Logo">
+                    <h1>DOOM Preparation Guide</h1>
+                </div>
+                <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Main Page</a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <h1 class="page-title">DOOM Tournament Preparation Guide</h1>
+            
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-info-circle"></i> Introduction</h2>
+                <p>Hello! This is the DOOM preparation guide for the DOOM x Chess Tournament. This guide will walk you through installing and running the ViZDoom client, an AI research platform for DOOM that we'll be using for our tournament.</p>
+                
+                <div class="note-box">
+                    <p><strong>Important:</strong> Please follow this guide to install and test the client before participating in the tournament. If you encounter any issues, contact us immediately.</p>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-download"></i> Installing ViZDoom Client</h2>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Clone the GitHub Repository</h3>
+                    </div>
+                    <div class="step-content">
+                        <p>First, download or clone the following GitHub repository:</p>
+                        <a href="https://github.com/wngjs3/ViZDoom_Client_Setup" target="_blank" class="btn">Visit GitHub Repository</a>
+                        
+                        <p>There are two ways to download the repository:</p>
+                        <ol>
+                            <li>Click the "Code" button on the GitHub page and select "Download ZIP" to download as a ZIP file</li>
+                            <li>Or run the following command in your terminal to clone:</li>
+                        </ol>
+                        
+                        <div class="command-block">git clone https://github.com/wngjs3/ViZDoom_Client_Setup.git</div>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Run the Installation Script</h3>
+                    </div>
+                    <div class="step-content">
+                        <p>Navigate to the downloaded repository directory and run the installation script appropriate for your operating system.</p>
+                        
+                        <p><strong>For macOS/Linux users:</strong></p>
+                        <div class="command-block">cd ViZDoom_Client_Setup
+chmod +x install.sh
+./install.sh</div>
+                        
+                        <p><strong>For Windows or other OS users:</strong></p>
+                        <div class="command-block">cd ViZDoom_Client_Setup
+python install.py</div>
+                        
+                        <p>The installation script will automatically install all necessary dependencies and set up the ViZDoom client.</p>
+                    </div>
+                </div>
+                
+                <div class="note-box">
+                    <p><strong>Note:</strong> For macOS users, the installation script will automatically install necessary packages (cmake, boost, sdl2, wget). You may need to enter your password during script execution.</p>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-gamepad"></i> Running the ViZDoom Client</h2>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Launch the Client</h3>
+                    </div>
+                    <div class="step-content">
+                        <p>Once installation is complete, you can run the client with the following commands:</p>
+                        
+                        <div class="command-block">cd ViZDoom/client
+python client.py</div>
+                        
+                        <p>When the client launches, you should see an interface similar to:</p>
+                        <img src="images/vizdoom-client.jpg" alt="ViZDoom Client Interface">
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Test Single Player Mode</h3>
+                    </div>
+                    <div class="step-content">
+                        <p>To verify that the client is working correctly, test the single player mode:</p>
+                        
+                        <ol>
+                            <li>Click the "Single Player" button from the client's main screen</li>
+                            <li>Select a map and start the game</li>
+                            <li>Verify that the game loads and runs successfully</li>
+                        </ol>
+                        
+                        <p>If the game runs normally in single player mode, your installation has been successful.</p>
+                    </div>
+                </div>
+                
+                <div class="note-box">
+                    <p><strong>Troubleshooting:</strong> If you encounter issues running the client, please contact <a href="mailto:juheon@kaist.ac.kr" class="footer-link">juheon@kaist.ac.kr</a>. Include any error messages and your operating system information to help resolve the issue quickly.</p>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-keyboard"></i> Game Controls</h2>
+                
+                <p>The basic controls used in DOOM are as follows:</p>
+                
+                <table class="controls-table">
+                    <thead>
+                        <tr>
+                            <th>Key</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>W, A, S, D</td>
+                            <td>Movement (forward, left, backward, right)</td>
+                        </tr>
+                        <tr>
+                            <td>Mouse movement</td>
+                            <td>Look/aim</td>
+                        </tr>
+                        <tr>
+                            <td>Left mouse button</td>
+                            <td>Attack</td>
+                        </tr>
+                        <tr>
+                            <td>E</td>
+                            <td>Open doors/interact</td>
+                        </tr>
+                        <tr>
+                            <td>Spacebar</td>
+                            <td>Jump</td>
+                        </tr>
+                        <tr>
+                            <td>Number keys (1-7)</td>
+                            <td>Change weapons</td>
+                        </tr>
+                        <tr>
+                            <td>Mouse wheel</td>
+                            <td>Cycle weapons</td>
+                        </tr>
+                        <tr>
+                            <td>ESC</td>
+                            <td>Menu or exit game</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>In the tournament, you will be playing in deathmatch mode. The goal is to defeat as many opponents as possible to achieve a high score.</p>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number"><i class="fas fa-question"></i></div>
+                        <h3 class="step-title">I'm experiencing package installation errors. What should I do?</h3>
+                    </div>
+                    <div class="step-content">
+                        <p>Try manually installing the required packages with the following command:</p>
+                        <div class="command-block">pip install numpy opencv-python matplotlib vizdoom pillow requests</div>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number"><i class="fas fa-question"></i></div>
+                        <h3 class="step-title">The client won't start. What should I check?</h3>
+                    </div>
+                    <div class="step-content">
+                        <p>Check the following:</p>
+                        <ol>
+                            <li>Verify that Python 3.6 or higher is installed</li>
+                            <li>Ensure all necessary dependencies were properly installed</li>
+                            <li>For macOS, check that required packages were installed via brew (cmake, boost, sdl2, wget)</li>
+                        </ol>
+                        <p>If the problem persists, contact <a href="mailto:juheon@kaist.ac.kr" class="footer-link">juheon@kaist.ac.kr</a>.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number"><i class="fas fa-question"></i></div>
+                        <h3 class="step-title">I need additional help with installation.</h3>
+                    </div>
+                    <div class="step-content">
+                        <p>We will provide installation help sessions before the tournament. Alternatively, you can contact <a href="mailto:juheon@kaist.ac.kr" class="footer-link">juheon@kaist.ac.kr</a> anytime for assistance.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-bullseye"></i> Tournament Preparation Tips</h2>
+                
+                <p>Here are some tips to perform well in the tournament:</p>
+                
+                <ol>
+                    <li>Practice enough in single player mode to become familiar with game mechanics and controls.</li>
+                    <li>Experiment with different weapons and understand their strengths and weaknesses.</li>
+                    <li>Explore maps and memorize item locations and strategic points.</li>
+                    <li>Practice aiming at moving targets.</li>
+                    <li>Focus on practicing the maps that will be used in the tournament (E1M1, E1M7, E2M2).</li>
+                </ol>
+                
+                <div class="note-box">
+                    <p><strong>Note:</strong> All participants must install and test the client before the tournament. It's best to resolve any technical issues before the day of the tournament.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">DOOM x Chess Tournament 2025 | Contact: <a href="mailto:juheon@kaist.ac.kr" class="footer-link">juheon@kaist.ac.kr</a></p>
+                <p class="footer-text">Having installation issues? Don't hesitate to reach out!</p>
+                <a href="../index.html" class="btn btn-secondary">Return to Main Page</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
