@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chess Dataset Collection Documentation</title>
+	<style>
+		/* Base styles */
+		:root {
+			--primary-color: #4a6da7;
+			--text-color: #333;
+			--bg-color: #ffffff;
+			--border-color: #e0e0e0;
+			--section-bg: #f9f9f9;
+			--link-color: #2c5282;
+		}
+		
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		
+		body {
+			font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+			line-height: 1.6;
+			color: var(--text-color);
+			background-color: var(--bg-color);
+			padding: 0;
+			max-width: 100%;
+		}
+		
+		.container {
+			width: 90%;
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 2rem 0;
+		}
+		
+		/* Typography */
+		h1, h2, h3, h4 {
+			margin-top: 1.5rem;
+			margin-bottom: 1rem;
+			color: #333;
+			font-weight: 600;
+			line-height: 1.3;
+		}
+		
+		h1 {
+			font-size: 2.5rem;
+			text-align: center;
+			padding-bottom: 1rem;
+			border-bottom: 1px solid var(--border-color);
+			margin-bottom: 2rem;
+		}
+		
+		h2 {
+			font-size: 1.8rem;
+			margin-top: 2.5rem;
+			padding-bottom: 0.5rem;
+			border-bottom: 1px solid var(--border-color);
+		}
+		
+		h3 {
+			font-size: 1.4rem;
+			margin-top: 2rem;
+		}
+		
+		p {
+			margin-bottom: 1.2rem;
+		}
+		
+		a {
+			color: var(--link-color);
+			text-decoration: none;
+		}
+		
+		a:hover {
+			text-decoration: underline;
+		}
+		
+		/* Lists */
+		ul, ol {
+			margin: 1rem 0 1.5rem 2rem;
+		}
+		
+		li {
+			margin-bottom: 0.5rem;
+		}
+		
+		/* Images */
+		figure {
+			margin: 1.5rem 0;
+			text-align: center;
+		}
+		
+		img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 4px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+		
+		/* Sections */
+		.section {
+			margin-bottom: 2.5rem;
+			padding: 1.5rem;
+			background-color: var(--section-bg);
+			border-radius: 8px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+		}
+		
+		/* Responsive iframe */
+		.video-container {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			margin: 1.5rem 0;
+			padding-top: 56.25%; /* 16:9 Aspect Ratio */
+		}
+		
+		.video-container iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			border: none;
+			border-radius: 8px;
+		}
+		
+		/* Call to action */
+		.cta {
+			background-color: #edf2fb;
+			padding: 1.5rem;
+			margin: 2rem 0;
+			border-left: 4px solid var(--primary-color);
+			border-radius: 4px;
+		}
+		
+		/* Emphasis */
+		strong {
+			color: #000;
+			font-weight: 600;
+		}
+		
+		/* Footer */
+		footer {
+			margin-top: 4rem;
+			padding-top: 1.5rem;
+			text-align: center;
+			border-top: 1px solid var(--border-color);
+			font-size: 0.9rem;
+			color: #666;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>Chess Dataset Collection</h1>
+		</header>
+		
+		<main>
+			<section class="section" id="how-to-play">
+				<h2>How to play Chess?</h2>
+				<p><strong>[Tutorial Video]</strong></p>
+				<div class="video-container">
+					<iframe src="https://www.youtube.com/embed/IU6k-4rKf-g" 
+						title="How to Play Chess: The Complete Guide for Beginners" 
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+						allowfullscreen></iframe>
+				</div>
+				
+				<p><strong>[Tutorial Blog]</strong></p>
+				<p><a href="https://www.chess.com/learn-how-to-play-chess" target="_blank">https://www.chess.com/learn-how-to-play-chess</a></p>
+			</section>
+			
+			<section class="section" id="why">
+				<h2>Why are we doing this?</h2>
+				<p>We are trying to create a benchmark for detecting cheater in chess.</p>
+				
+				<figure>
+					<img src="images/image.png" alt="Chess Screenshot">
+				</figure>
+				
+				<p>Cheaters are a serious problem in the chess community and detecting them is difficult because cheaters will mix cheat moves with their own moves.</p>
+				
+				<div class="cta">
+					<p>→ We are creating data of normal players and cheaters (with limited attempts to cheat) and use these data to improve cheat detection in chess</p>
+				</div>
+			</section>
+			
+			<section class="section" id="how-to-use">
+				<h2>How to use?</h2>
+				
+				<h3>Access Website Here</h3>
+				<p><a href="http://34.64.183.234/" target="_blank">http://34.64.183.234</a></p>
+				
+				<h3>Participate in Normal Chess or Blitz Chess</h3>
+				<ul>
+					<li><strong>Normal Chess Game</strong>: Take as much time to make a move</li>
+					<li><strong>Blitz Chess Game</strong>: Total of 5 minutes to make a move during entire game.
+						<ul>
+							<li>A player loses they used up all 5 minutes before game is over!</li>
+						</ul>
+					</li>
+				</ul>
+				
+				<figure>
+					<img src="images/image1.png" alt="Chess game type selection">
+				</figure>
+				
+				<h3>1.1. Create a new game and wait for others to join</h3>
+				<p>You will wait briefly until opponent is found</p>
+				
+				<figure>
+					<img src="images/image2.png" alt="Waiting for opponent">
+				</figure>
+				
+				<p>When the game is found you will play right away</p>
+				
+				<figure>
+					<img src="images/image3.png" alt="Game found">
+				</figure>
+				
+				<h3>1.2. Join a game created by someone else</h3>
+				<p>You will see the list of games you can join</p>
+				<p>Select games you want to join by the game mode and side</p>
+				
+				<figure>
+					<img src="images/image4.png" alt="Join existing game">
+				</figure>
+				
+				<h3>2. Play the game</h3>
+				<p>If you are assigned as the cheater</p>
+				
+				<figure>
+					<img src="images/image5.png" alt="Cheater view">
+				</figure>
+				
+				<p>You will have <strong>only 5 chances</strong> to use cheat moves, so use WISELY</p>
+				<p>Press "Use Cheat", and an AI will automatically make the best move for you</p>
+				<p>(cheat moves are generated by chess engine better than any human)</p>
+				
+				<p>If you are not assigned as the cheater</p>
+				<p>Play as you normally would</p>
+				
+				<figure>
+					<img src="images/image6.png" alt="Normal player view">
+				</figure>
+				
+				<p>Opponent does not know if your the cheater or not</p>
+				
+				<figure>
+					<img src="images/image7.png" alt="Game in progress">
+				</figure>
+				
+				<div class="cta">
+					<p><strong>For the purpose of data collection, please try not to forfeit</strong></p>
+				</div>
+			</section>
+			
+			<section class="section" id="conclusion">
+				<h2>3. If game is over, you can create or join new game</h2>
+				<p>Since we are creating a dataset, active participation in games will be helpful to us!</p>
+			</section>
+		</main>
+		
+		<footer>
+			<p>Chess Cheat Detection Research Project Documentation</p>
+		</footer>
+	</div>
+</body>
+
+</html>

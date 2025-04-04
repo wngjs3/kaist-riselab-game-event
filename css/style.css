@@ -844,6 +844,79 @@ nav .nav-link.cta::after {
     margin-bottom: 0;
 }
 
+/* Preparation Guide Section */
+.guides-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.guide-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+    border-left: 3px solid var(--doom-red);
+}
+
+.guide-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.guide-icon {
+    font-size: 3rem;
+    color: var(--doom-red);
+    margin-bottom: var(--space-lg);
+}
+
+.guide-card h3 {
+    color: var(--doom-yellow);
+    margin-bottom: var(--space-md);
+}
+
+.guide-card p {
+    margin-bottom: var(--space-lg);
+    min-height: 4.8em;
+}
+
+.guide-card .btn {
+    display: inline-block;
+    width: 100%;
+}
+
+.rule-links {
+    margin-top: var(--space-lg);
+}
+
+.preparation-note {
+    background-color: rgba(231, 76, 60, 0.1);
+    border-left: 4px solid var(--doom-red);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-2xl);
+}
+
+.preparation-note p {
+    margin-bottom: var(--space-md);
+}
+
+.preparation-note ul {
+    margin-left: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+    .guide-card {
+        min-width: 100%;
+    }
+}
+
 /* Rules Section */
 #rules {
     position: relative;
